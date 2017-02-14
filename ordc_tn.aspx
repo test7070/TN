@@ -84,7 +84,7 @@
 				q_cmbParse("combPaytype", q_getPara('rc2.paytype'));
 				q_cmbParse("cmbTrantype", q_getPara('sys.tran'));
 				q_cmbParse("cmbTaxtype", q_getPara('sys.taxtype'));
-				var t_where = "where=^^ 1=1 ^^";
+				var t_where = "where=^^ 1=0 ^^ stop=100";
 				q_gt('custaddr', t_where, 0, 0, 0, "");
 				$('#cmbKind').change(function() {
 					for (var j = 0; j < q_bbsCount; j++) {
@@ -116,7 +116,7 @@
 				});
 				$('#txtTggno').change(function() {
 					if (!emp($('#txtTggno').val())) {
-						var t_where = "where=^^ noa='" + $('#txtTggno').val() + "' ^^";
+						var t_where = "where=^^ noa='" + $('#txtTggno').val() + "' ^^ stop=100";
 						q_gt('custaddr', t_where, 0, 0, 0, "");
 					}
 				});
@@ -611,7 +611,7 @@
 				$('#txtAcomp').val(z_acomp);
 				$('#txtAddr2').val(z_addr2);
 				product_change();
-				var t_where = "where=^^ 1=1 ^^";
+				var t_where = "where=^^ 1=0 ^^ stop=100";
 				q_gt('custaddr', t_where, 0, 0, 0, "");
 				$('#cmbTaxtype').val(4);
 				$('#cmbKind').val('1').change();
@@ -632,7 +632,7 @@
 				$('#txtProduct').focus();
 				product_change();
 				if (!emp($('#txtTggno').val())) {
-					var t_where = "where=^^ noa='" + $('#txtTggno').val() + "' ^^";
+					var t_where = "where=^^ noa='" + $('#txtTggno').val() + "' ^^ stop=100";
 					q_gt('custaddr', t_where, 0, 0, 0, "");
 				}
 			
@@ -809,7 +809,7 @@
 				switch (s1) {
 					case 'txtTggno':
 						if (!emp($('#txtTggno').val())) {
-							var t_where = "where=^^ noa='" + $('#txtTggno').val() + "' ^^";
+							var t_where = "where=^^ noa='" + $('#txtTggno').val() + "' ^^ stop=100";
 							q_gt('custaddr', t_where, 0, 0, 0, "");
 						}
 						break;
